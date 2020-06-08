@@ -23,6 +23,9 @@ class MainActivity : BaseActivity() {
     override fun setValues() {
         myAdapter = MyAdapter(supportFragmentManager)
         myViewPager.adapter = myAdapter
+
+//        탭레이아웃과 뷰페이저를 연결
+        myTabLayout.setupWithViewPager(myViewPager)
     }
 
 }
