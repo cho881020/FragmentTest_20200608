@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_student_list.*
 import kr.co.tjoeun.fragmenttest_20200608.R
+import kr.co.tjoeun.fragmenttest_20200608.adapters.UserAdapter
 import kr.co.tjoeun.fragmenttest_20200608.datas.User
 
 class StudentListFragment : BaseFragment() {
 
     val studentList = ArrayList<User>()
+    lateinit var userAdapter : UserAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +35,8 @@ class StudentListFragment : BaseFragment() {
 
     override fun setValues() {
         addStudents()
+        userAdapter = UserAdapter(mContext, R.layout.user_list_item, studentList)
+        studentListView.adapter = userAdapter
     }
 
     fun addStudents() {
