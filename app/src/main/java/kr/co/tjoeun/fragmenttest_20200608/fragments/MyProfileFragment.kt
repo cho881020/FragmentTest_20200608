@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_my_profile.*
+import kr.co.tjoeun.fragmenttest_20200608.MainActivity
 import kr.co.tjoeun.fragmenttest_20200608.R
 
 class MyProfileFragment : BaseFragment() {
@@ -28,6 +29,11 @@ class MyProfileFragment : BaseFragment() {
     }
 
     override fun setupEvents() {
+
+        changeBtn.setOnClickListener {
+            val myIntent = Intent(mContext, MainActivity::class.java)
+            startActivity(myIntent)
+        }
 
         dialBtn.setOnClickListener {
 
