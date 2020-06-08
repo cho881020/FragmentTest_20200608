@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kr.co.tjoeun.fragmenttest_20200608.R
 
-class StudentListFragment : Fragment() {
+class StudentListFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,6 +19,15 @@ class StudentListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setupEvents()
+        setValues()
+    }
+
+    override fun setupEvents() {
+
+    }
+
+    override fun setValues() {
 
     }
 
